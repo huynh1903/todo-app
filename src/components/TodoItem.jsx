@@ -22,7 +22,7 @@ const TodoList = ({ title, isCompleted, isDark }) => {
           <div className="w-6 h-6 rounded-full border-[1px] border-slate-500"></div>
         )}
       </div>
-      <div className={`${isDark ? 'text-slate-400' : 'text-slate-700'} w-9/12`}>
+      <div className={`${isDark ? 'text-slate-400' : 'text-slate-700'} ${isCompleted ? 'line-through' : ''} w-9/12`}>
         <p>{title}</p>
       </div>
       <div className="w-1/12 hover:cursor-pointer ease-in duration-150">
