@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import iconSun from "./assets/images/icon-sun.svg";
 import iconMoon from "./assets/images/icon-moon.svg";
 import Input from "./components/Input";
@@ -7,7 +7,7 @@ import TodoContext from "./store/TodoContext";
 
 function App() {
   const { items, clearCompleted } = useContext(TodoContext);
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   let totalActiveItem = items.reduce((acc, todo) => {
     if (!todo.completed) {
@@ -15,6 +15,7 @@ function App() {
     }
     return acc;
   }, 0);
+
   return (
     <div
       className={`${
